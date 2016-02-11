@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>YVBar</title>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<link rel="stylesheet" type="text/css" href="css.css">
+</head>
+<script>
+$(document).ready(
+
+    function() {
+
+        function initialize() {
+  
+  var myLatlng = new google.maps.LatLng(49.281876,-123.1059037);
+  var mapOptions = {
+    zoom: 17,
+    center: myLatlng
+  };
+
+  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+  var mark = 'marker.png'
+
+  //funkys
+  var info1 = '<div class="info1">'+
+      "<h3>Funky Winkerbean's</h3>"+
+      '<dt>Hours</dt>'+
+        '<dd>11:30 am to 1 am</dd>'+
+      '<dt>Music</dt>'+
+        '<dd>Rock/Punk/Metal</dd>'+
+        '<dd>Jukebox; $1 - $2 per song</dd>'+
+      '<dt>Food/Drink</dt>'+
+        '<dd>All food $4.95</dd>'+
+        '<dd>Daily drink specials</dd>'+
+      '<dt>Vibe</dt>'+
+        '<dd>Clean, friendly dive bar. Great waitstaff and bartenders.</dd>'+
+      '<dt>Nearby bars</dt>'+
+        '<dd>The Bourbon: 1 block</dd>'+
+        '<dd>The Blarney Stone: 3 blocks</dd>'+
+        '<dd>Metropole: 2 blocks</dd>'
+      '</div>';
+
+  var infowindow1 = new google.maps.InfoWindow({
+      content: info1
+  });
+
+  var mark1 = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      icon: mark,
+      title: "Funky Winkerbean's"
+  });
+  google.maps.event.addListener(mark1, 'click', function() {
+    infowindow1.open(map,mark1);
+  });
+
+   //bourbon
+     var info2 = '<div class="info1">'+
+      '<h3>The Bourbon</h3>'+
+      '<dt>Hours</dt>'+
+        '<dd>11:30 am to 1 am</dd>'+
+      '<dt>Music</dt>'+
+        '<dd>Rock/Punk/Metal</dd>'+
+        '<dd>Jukebox; $1 - $2 per song</dd>'+
+      '<dt>Food/Drink</dt>'+
+        '<dd>All food $5.95</dd>'+
+        '<dd>Daily drink specials</dd>'+
+      '<dt>Vibe</dt>'+
+        '<dd>Clean, friendly dive bar. Great waitstaff and bartenders.</dd>'+
+      '<dt>Nearby bars</dt>'+
+        "<dd>Funky Winkerbean's: 1 block</dd>"+
+        '<dd>The Blarney Stone: 2 blocks</dd>'+
+        '<dd>Metropole: 1 block</dd>'
+      '</div>';
+
+  var infowindow2 = new google.maps.InfoWindow({
+      content: info2
+  });
+
+    var myLatLng2 = new google.maps.LatLng(49.2823639,-123.106012);
+    var mark2 = new google.maps.Marker(
+      { position: myLatLng2,
+        map: map,
+        icon: mark,
+        title: 'The Bourbon'
+      }
+    );
+
+    google.maps.event.addListener(mark2, 'click', function() {
+    infowindow2.open(map,mark2);
+    });
+
+    //blarney
+     var info3 = '<div class="info1">'+
+      "<h3>The Blarney Stone</h3>"+
+      '<dt>Hours</dt>'+
+        '<dd>11:30 am to 1 am</dd>'+
+      '<dt>Music</dt>'+
+        '<dd>Rock/Punk/Metal</dd>'+
+        '<dd>Jukebox; $1 - $2 per song</dd>'+
+      '<dt>Food/Drink</dt>'+
+        '<dd>All food $5.95</dd>'+
+        '<dd>Daily drink specials</dd>'+
+      '<dt>Vibe</dt>'+
+        '<dd>Clean, friendly dive bar. Great waitstaff and bartenders.</dd>'+
+      '<dt>Nearby bars</dt>'+
+        "<dd>Funky Winkerbean's: 3 block</dd>"+
+        '<dd>The Bourbon: 2 blocks</dd>'+
+        '<dd>Metropole: 2 block</dd>'
+      '</div>';
+
+  var infowindow3 = new google.maps.InfoWindow({
+      content: info3
+  });
+
+    var myLatLng3 = new google.maps.LatLng(49.2828147,-123.1039366);
+    var mark3 = new google.maps.Marker(
+      { position: myLatLng3,
+        map: map,
+        icon: mark,
+        title: "The Blarney Stone"
+      }
+    );
+
+    google.maps.event.addListener(mark3, 'click', function() {
+    infowindow3.open(map,mark3);
+    });
+
+    //metropole
+     var info4 = '<div class="info1">'+
+      "<h3>The Metropole</h3>"+
+      '<dt>Hours</dt>'+
+        '<dd>11:30 am to 1 am</dd>'+
+      '<dt>Music</dt>'+
+        '<dd>Rock/Punk/Metal</dd>'+
+        '<dd>Jukebox; $1 - $2 per song</dd>'+
+      '<dt>Food/Drink</dt>'+
+        '<dd>All food $5.95</dd>'+
+        '<dd>Daily drink specials</dd>'+
+      '<dt>Vibe</dt>'+
+        '<dd>Clean, friendly dive bar. Great waitstaff and bartenders.</dd>'+
+      '<dt>Nearby bars</dt>'+
+        "<dd>Funky Winkerbean's: 2 block</dd>"+
+        '<dd>The Blarney Stone: 2 blocks</dd>'+
+        "<dd>The Bourbon: 1 block</dd>"
+      '</div>';
+
+  var infowindow4 = new google.maps.InfoWindow({
+      content: info4
+  });
+
+    var myLatLng4 = new google.maps.LatLng(49.2830806,-123.1069142);
+    var mark4 = new google.maps.Marker(
+      { position: myLatLng4,
+        map: map,
+        icon: mark,
+        title: 'The Metropole'
+      }
+    );
+
+    google.maps.event.addListener(mark4, 'click', function() {
+    infowindow4.open(map,mark4);
+    });
+
+    map.set('styles', [
+  {
+    "featureType": "road",
+    "stylers": [
+      { "visibility": "simplified" }
+    ]
+  },{
+    "featureType": "poi.business",
+    "elementType": "labels.text",
+    "stylers": [
+      { "visibility": "off" }
+    ]
+  },{
+    "elementType": "labels.icon",
+    "stylers": [
+      { "visibility": "on" }
+    ]
+  },{
+    "featureType": "landscape",
+    "stylers": [
+      { "hue": "#ff1a00" }
+    ]
+  },{
+    "featureType": "road.highway",
+    "stylers": [
+      { "hue": "#ff6e00" }
+    ]
+  },{
+    "featureType": "poi.business",
+    "elementType": "labels",
+    "stylers": [
+      { "visibility": "off" }
+    ]
+  }
+      ]);
+}
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+    });
+</script>
+
+<body>
+  <div class="wrapper">
+<div id="header"><a href="index.html"><img src="title2.png" id="title"/></a></div>
+
+<div id="middle">
+	<p id="street">Hastings Street</p>
+	<p>Select a bar for more info!</p>
+</div>
+
+<div id="map-canvas"></div>
+
+<div id="footer">
+	<div id="foottxt"><a href="index.html" id="back">Back</a><a href="#">Contact</a><br/><br/>
+		Made by MD McCullough 2015 
+	</div>
+</div>
+
+</div>
+</body>
+</html>
